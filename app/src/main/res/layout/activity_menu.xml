@@ -14,6 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="SaludApp"
+        android:layout_marginTop="16dp"
         android:background="@color/purple_200"
         />
     <androidx.appcompat.widget.AppCompatButton
@@ -21,6 +22,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="ImcApp"
+        android:layout_marginTop="16dp"
+        android:background="@color/purple_200"
+        />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnTODO"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TODO App"
+        android:layout_marginTop="16dp"
         android:background="@color/purple_200"
         />
 </LinearLayout>
