@@ -29,4 +29,9 @@
     <string name="todo_title">Bienvenido, usuario</string>
     <string name="todo_category">Categorias:</string>
     <string name="todo_tasks">Tareas</string>
+    <string name="todo_dialog_add_task">Añade la Tarea</string>
+    <string name="todo_dialog_category_business">Negocios</string>
+    <string name="todo_dialog_category_personal">Personal</string>
+    <string name="todo_dialog_category_other">Otros</string>
+    <string name="todo_dialog_add_task_btn">Crear Tarea</string>
 </resources>
