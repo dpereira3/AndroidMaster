@@ -31,4 +31,13 @@
     <color name="todo_business_category">#FF9800</color>
     <color name="todo_personal_category">#00BCD4</color>
     <color name="todo_other_category">#4CAF50</color>
+
+    <!--  SuperHero App  -->
+    <color  name="superhero_item_name">#8F673487</color>
+    <color name="superhero_stat_intelligence">#228828</color>
+    <color name="superhero_stat_strength">#FF0000</color>
+    <color name="superhero_stat_speed">#E88800</color>
+    <color name="superhero_stat_durability">#03A9F4</color>
+    <color name="superhero_stat_power">#FFE838</color>
+    <color name="superhero_stat_combat">#673A87</color>
 </resources>
