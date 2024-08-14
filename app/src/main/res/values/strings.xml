@@ -34,4 +34,16 @@
     <string name="todo_dialog_category_personal">Personal</string>
     <string name="todo_dialog_category_other">Otros</string>
     <string name="todo_dialog_add_task_btn">Crear Tarea</string>
+    <string name="superhero_image">SuperHero Image</string>
+    <string name="intelligence">Intelligence</string>
+    <string name="strength">Strength</string>
+    <string name="speed">Speed</string>
+    <string name="durability">Durability</string>
+    <string name="power">Power</string>
+    <string name="combat">Combat</string>
+    <string name="saludapp">SaludApp</string>
+    <string name="imcapp">ImcApp</string>
+    <string name="todo_app">TODO App</string>
+    <string name="superhero_app">SuperHero App</string>
+    <string name="settings">Settings</string>
 </resources>

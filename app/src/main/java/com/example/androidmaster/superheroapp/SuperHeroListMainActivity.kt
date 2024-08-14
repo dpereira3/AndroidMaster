@@ -81,7 +81,7 @@ class SuperHeroListMainActivity : AppCompatActivity() {
             }
         }
 
-    }
+    }//Busqueda de los superheroes a partir del contenido del edittexk
 
     private fun getRetrofit(): Retrofit {
         val retrofit = Retrofit.Builder()
@@ -95,5 +95,5 @@ class SuperHeroListMainActivity : AppCompatActivity() {
         val intent = Intent(this, DetailSuperheroActivity::class.java)
         intent.putExtra(EXTRA_ID, id)
         startActivity(intent)
-    }
+    }//Para abrir la pantalla de detalle, pasa el id para buscar el superheroe
 }

@@ -21,7 +21,7 @@ class DetailSuperheroActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_ID = "extra_id"
-    }
+    } //Para compartir el nombre del parametro
 
     private lateinit var binding: ActivityDetailSuperheroBinding
 
@@ -51,12 +51,14 @@ class DetailSuperheroActivity : AppCompatActivity() {
 
             }
         }
-    }
+    } //Para buscar los datos por API
 
     private fun createUI(superhero: SuperheroDetailResponse) {
         Picasso.get().load(superhero.image.url).into(binding.ivSuperhero)
         binding.tvSuperheroName.text = superhero.name
         prepareStats(superhero.powerstats)
+        binding.tvSuperheroRealName.text = superhero.biography.fullname
+        binding.tvPublisher.text = superhero.biography.publisher
     }
 
     private fun prepareStats(powerstats: PowerStatsResponse) {
@@ -66,18 +68,18 @@ class DetailSuperheroActivity : AppCompatActivity() {
         updateHeight(binding.viewPower, powerstats.power)
         updateHeight(binding.viewDurability, powerstats.durability)
         updateHeight(binding.viewStrength, powerstats.strength)
-    }
+    }//Para acomodar los datos del grafico de barras
 
     private fun updateHeight(view: View, stat:String){
         val params = view.layoutParams
         params.height = pxToDp(stat.toFloat())
         view.layoutParams = params
 
-    }
+    }//Para actualizar el valor de la altura de la barra
 
     private fun pxToDp(px:Float):Int {
         return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, px, resources.displayMetrics).roundToInt()
-    }
+    }//Para pasar los datos enteros a pixels de la pantalla
 
     private fun getRetrofit(): Retrofit {
         return Retrofit
@@ -85,7 +87,7 @@ class DetailSuperheroActivity : AppCompatActivity() {
             .baseUrl("https://superheroapi.com/api/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
-    }
+    }//Llamada a la API
 
 
 }

@@ -13,7 +13,7 @@
         android:id="@+id/btnSaludApp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SaludApp"
+        android:text="@string/saludapp"
         android:layout_marginTop="16dp"
         android:background="@color/purple_200"
         />
@@ -21,7 +21,7 @@
         android:id="@+id/btnImcApp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="ImcApp"
+        android:text="@string/imcapp"
         android:layout_marginTop="16dp"
         android:background="@color/purple_200"
         />
@@ -29,7 +29,7 @@
         android:id="@+id/btnTODO"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TODO App"
+        android:text="@string/todo_app"
         android:layout_marginTop="16dp"
         android:background="@color/purple_200"
         />
@@ -37,7 +37,16 @@
         android:id="@+id/btnSuperHero"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SuperHero App"
+        android:text="@string/superhero_app"
+        android:layout_marginTop="16dp"
+        android:background="@color/purple_200"
+        />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/settings"
         android:layout_marginTop="16dp"
         android:background="@color/purple_200"
         />

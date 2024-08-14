@@ -17,3 +17,4 @@ data class SuperHeroItemResponse(
 data class SuperheroImageResponse(
     @SerializedName("url") val url:String
 )
+//A partir de la respuesta de la API se configura el objeto que va a tomar los datos para mostrar en la app
