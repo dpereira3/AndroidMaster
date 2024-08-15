@@ -11,10 +11,7 @@ import androidx.appcompat.app.AppCompatDelegate.MODE_NIGHT_YES
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.core.Preferences
-import androidx.datastore.preferences.core.booleanPreferencesKey
-import androidx.datastore.preferences.core.edit
-import androidx.datastore.preferences.core.intPreferencesKey
+import androidx.datastore.preferences.core.*
 import androidx.datastore.preferences.preferencesDataStore
 import com.example.androidmaster.R
 import com.example.androidmaster.databinding.ActivitySettingsBinding
@@ -32,7 +29,7 @@ val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = "se
 class SettingsActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivitySettingsBinding
-    private var firstTime:Boolean = true
+    private var firstTime: Boolean = true
 
     companion object {
         const val VOLUME_LVL = "volume_lvl"
@@ -47,16 +44,17 @@ class SettingsActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         enableEdgeToEdge()
-        setContentView(R.layout.activity_settings)
+
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+
         CoroutineScope(Dispatchers.IO).launch {
             getSettings().filter { firstTime }.collect { settingsModel ->
-                if(settingsModel != null){
-                    runOnUiThread{
+                if (settingsModel != null) {
+                    runOnUiThread {
                         binding.switchVibration.isChecked = settingsModel.vibration
                         binding.switchBluetooth.isChecked = settingsModel.bluetooth
                         binding.switchDarkMode.isChecked = settingsModel.darkmode
@@ -79,37 +77,37 @@ class SettingsActivity : AppCompatActivity() {
 
         binding.switchBluetooth.setOnCheckedChangeListener { _, value ->
             CoroutineScope(Dispatchers.IO).launch {
-                saveOptions( KEY_BLUETOOTH, value)
+                saveOptions(KEY_BLUETOOTH, value)
             }
         }
 
         binding.switchVibration.setOnCheckedChangeListener { _, value ->
             CoroutineScope(Dispatchers.IO).launch {
-                saveOptions( KEY_VIBRATION, value)
+                saveOptions(KEY_VIBRATION, value)
             }
         }
 
         binding.switchDarkMode.setOnCheckedChangeListener { _, value ->
 
-            if(value){
+            if(value) {
                 enableDarkMode()
-            }else{
+            } else {
                 disableDarkMode()
             }
 
             CoroutineScope(Dispatchers.IO).launch {
-                saveOptions( KEY_DARK_MODE, value)
+                saveOptions(KEY_DARK_MODE, value)
             }
         }
     }
 
-    private suspend fun saveVolume(value:Int){
+    private suspend fun saveVolume(value: Int) {
         dataStore.edit { preferences ->
             preferences[intPreferencesKey(VOLUME_LVL)] = value
         }
     }
 
-    private suspend fun saveOptions(key:String, value:Boolean){
+    private suspend fun saveOptions(key: String, value: Boolean) {
         dataStore.edit { preferences ->
             preferences[booleanPreferencesKey(key)] = value
         }
@@ -128,12 +126,12 @@ class SettingsActivity : AppCompatActivity() {
         }
     }
 
-    private fun enableDarkMode(){
+    private fun enableDarkMode() {
         AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_YES)
         delegate.applyDayNight()
     }
 
-    private fun disableDarkMode(){
+    private fun disableDarkMode() {
         AppCompatDelegate.setDefaultNightMode(MODE_NIGHT_NO)
         delegate.applyDayNight()
     }

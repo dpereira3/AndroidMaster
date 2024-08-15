@@ -11,7 +11,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingVertical="4dp"
         android:gravity="center_vertical"
         android:orientation="horizontal">
 
@@ -23,7 +22,7 @@
 
         <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center_vertical"
             android:orientation="vertical">
@@ -32,7 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
-                android:textColor="@color/black"
+                android:textColor="@color/settings_text_title"
                 android:textStyle="normal"
                 android:text="Modo Oscuro"/>
 
@@ -77,7 +76,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
-                android:textColor="@color/black"
+                android:textColor="@color/settings_text_title"
                 android:textStyle="normal"
                 android:text="Activar Bluetooth"/>
 
@@ -127,7 +126,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
-                android:textColor="@color/black"
+                android:textColor="@color/settings_text_title"
                 android:textStyle="normal"
                 android:text="Ajustar volumen"/>
 
@@ -163,7 +162,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textSize="16sp"
-                android:textColor="@color/black"
+                android:textColor="@color/settings_text_title"
                 android:layout_weight="1"
                 android:textStyle="normal"
                 android:text="Activar Vibracion"/>
